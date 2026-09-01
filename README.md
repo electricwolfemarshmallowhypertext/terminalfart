@@ -1,28 +1,14 @@
-![TerminalFart](assets/terminalfart-githero.png)
+![TerminalFart](https://cdn.jsdelivr.net/npm/terminalfart/assets/terminalfart-githero.png)
 
-# Fartee
+# TerminalFart
 
 When your terminal fails, it rips one.
 
-A tiny CLI that plays sounds when terminal commands, builds, or tests need your attention.
+Install it once. After that, use your terminal normally. Failed commands keep the real error visible, then play a matching fart sound.
 
-```bash
-npm install -g terminalfart
-terminalfart install
-```
+Works on bash, zsh, and PowerShell.
 
-Restart your terminal. Then run commands like normal:
-
-```bash
-npm test
-npm run build
-git push
-bad-command
-```
-
-Failed commands keep the real error visible, then play a mapped fart sound.
-
-Commands that run for 2+ minutes play a done sound. Normal success is silent unless you turn it on.
+Restart your terminal after install.
 
 ## Install
 
@@ -31,10 +17,16 @@ npm install -g terminalfart
 terminalfart install
 ```
 
-Updating from an older version?
-Run `terminalfart install` again so your shell hook passes duration and event data.
+Then run commands like normal:
 
-TerminalFart auto-detects `bash`, `zsh`, or PowerShell.
+```bash
+npm test
+npm run build
+git push
+bad-command
+```
+
+TerminalFart auto-detects your shell.
 
 To choose a shell yourself:
 
@@ -58,7 +50,7 @@ terminalfart uninstall
 
 ## Sounds
 
-TerminalFart picks a sound from the failed command:
+TerminalFart picks a sound based on what failed:
 
 ```txt
 warning or lint failure     toot
@@ -68,7 +60,7 @@ command not found           poop-toot
 git push reject             hellacious
 ```
 
-For other failures, it falls back from the exit code.
+Other failures use a default sound.
 
 List the bundled sounds:
 
@@ -82,20 +74,16 @@ Turn on success sounds:
 terminalfart config success on
 ```
 
-Choose one sound for a wrapped command:
+Use TerminalFart for one command without turning on automatic mode:
+
+```bash
+terminalfart npm test
+```
+
+Choose a sound for one command:
 
 ```bash
 terminalfart npm test --sound wet
 terminalfart npm test --random
 terminalfart npm test --mute
 ```
-
-## Wrapper Mode
-
-You can still wrap a single command:
-
-```bash
-terminalfart npm test
-```
-
-Wrapper mode keeps the original output and exit code.

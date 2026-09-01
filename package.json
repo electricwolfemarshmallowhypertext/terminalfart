@@ -1,7 +1,7 @@
 {
   "name": "terminalfart",
-  "version": "1.1.0",
-  "description": "A tiny CLI hook that plays a fart sound when commands fail.",
+  "version": "1.1.1",
+  "description": "A tiny CLI that plays a fart sound when commands fail.",
   "license": "Apache-2.0",
   "bin": {
     "terminalfart": "bin/terminalfart.js"
